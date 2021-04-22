@@ -9,6 +9,7 @@ public class generateYicesFileWithNewAsserts {
 
         int bugPair = 0;
         replaceString rep = new replaceString();
+
         ArrayList<String> newAssertString = new ArrayList();
         String str = "(assert ";
         newAssertString.add(str);
@@ -39,18 +40,48 @@ public class generateYicesFileWithNewAsserts {
             }
         }
 
+
         bf.close();
         ds.close();
         fs.close();
 
-
-
         int prioWeight = 1;
-
+        String tempFilepath = "C:\\Users\\serwa\\Desktop\\ThesisProject\\resourses\\.tmp";
         File myInputFile = new File(inputPath);
+        File tempFile = new File(tempFilepath);
+        BufferedReader bf11 = new BufferedReader(new FileReader(myInputFile));
 
-        FileWriter myWriter = new FileWriter(myInputFile);
-        myWriter.write("(set-evidence! true)");
+        FileWriter myWriter = new FileWriter(tempFile, true);
+        PrintWriter pw = new PrintWriter(myWriter);
+        String line11 = null;
+
+        //Read from the original file and write to the new
+        //unless content matches data to be removed.
+        while ((line11 = bf11.readLine()) != null) {
+
+            if (!line11.trim().equals("(max-sat)")) {
+                pw.println(line11);
+                pw.flush();
+            }
+        }
+        pw.write("\n");
+        for(int i = 0; i<newAssertString.size(); i++){
+            pw.write(newAssertString.get(i));
+        }
+        pw.write("\n");
+        pw.write("(max-sat)");
+        pw.close();
+        bf11.close();
+
+        if (!myInputFile.delete())
+            System.out.println("Could not delete file");
+
+        //Rename the new file to the filename the original file had.
+        if (!tempFile.renameTo(myInputFile))
+            System.out.println("Could not rename file");
+
+
+        /*myWriter.write("(set-evidence! true)");
         myWriter.write("\n");
         myWriter.write("(define BUG::(-> nat nat))");
         myWriter.write("\n");
@@ -63,7 +94,7 @@ public class generateYicesFileWithNewAsserts {
         for(int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++){
                 if(importanceMatrix[i][j] == 1){
-                    myWriter.write("(assert+ (< (BUG " + Integer.toString(i) + ") (BUG " + Integer.toString(j) + ")) " + Integer.toString(prioWeight) + ")");
+                    myWriter.write("(assert+ (< (BUG " + Integer.toString(i+1) + ") (BUG " + Integer.toString(j+1) + ")) " + Integer.toString(prioWeight) + ")");
                     myWriter.write("\n");
                 }
             }
@@ -72,7 +103,7 @@ public class generateYicesFileWithNewAsserts {
         for(int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++){
                 if(ageMatrix[i][j] == 1){
-                    myWriter.write("(assert+ (< (BUG " + Integer.toString(i) + ") (BUG " + Integer.toString(j) + ")) " + Integer.toString(prioWeight) + ")");
+                    myWriter.write("(assert+ (< (BUG " + Integer.toString(i+1) + ") (BUG " + Integer.toString(j+1) + ")) " + Integer.toString(prioWeight) + ")");
                     myWriter.write("\n");
                 }
             }
@@ -81,7 +112,7 @@ public class generateYicesFileWithNewAsserts {
         for(int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++){
                 if(componentImpactGraph[i][j] == 1){
-                    myWriter.write("(assert+ (< (BUG " + Integer.toString(i) + ") (BUG " + Integer.toString(j) + ")) " + Integer.toString(prioWeight) + ")");
+                    myWriter.write("(assert+ (< (BUG " + Integer.toString(i+1) + ") (BUG " + Integer.toString(j+1) + ")) " + Integer.toString(prioWeight) + ")");
                     myWriter.write("\n");
                 }
             }
@@ -90,18 +121,12 @@ public class generateYicesFileWithNewAsserts {
         for(int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++){
                 if(relatedBugsGraph[i][j] == 1){
-                    myWriter.write("(assert+ (< (BUG " + Integer.toString(i) + ") (BUG " + Integer.toString(j) + ")) " + Integer.toString(prioWeight) + ")");
+                    myWriter.write("(assert+ (< (BUG " + Integer.toString(i+1) + ") (BUG " + Integer.toString(j+1) + ")) " + Integer.toString(prioWeight) + ")");
                     myWriter.write("\n");
                 }
             }
-        }
-        myWriter.write("\n");
-        for(int i = 0; i<newAssertString.size(); i++){
-            myWriter.write(newAssertString.get(i));
-        }
-        myWriter.write("\n");
-        myWriter.write("(max-sat)");
-        myWriter.close();
+        }*/
+
 
     }
 

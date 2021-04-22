@@ -24,7 +24,7 @@ public class Algorithm {
         while ((line = br.readLine()) != null)
             System.out.println(line);
         int exitValue = process.waitFor();
-        System.out.println(exitValue);
+        //System.out.println(exitValue);
         stderr.close();
         isr.close();
         br.close();

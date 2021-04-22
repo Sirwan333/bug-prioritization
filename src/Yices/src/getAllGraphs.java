@@ -36,14 +36,14 @@ public class getAllGraphs {
                 Cell nextRelatedBugsCell = nextRow.getCell(cellPosition);
                 int node2 = (int) nextRelatedBugsCell.getNumericCellValue();
                 if (node1 > node2) {
-                    bugMatrix[srcNode][desNode] = 1;
-                    bugMatrix[desNode][srcNode] = -1;
+                    bugMatrix[srcNode-1][desNode-1] = 1;
+                    bugMatrix[desNode-1][srcNode-1] = -1;
                 } else if (node2 > node1) {
-                    bugMatrix[srcNode][desNode] = -1;
-                    bugMatrix[desNode][srcNode] = 1;
+                    bugMatrix[srcNode-1][desNode-1] = -1;
+                    bugMatrix[desNode-1][srcNode-1] = 1;
                 } else {
-                    bugMatrix[srcNode][desNode] = 0;
-                    bugMatrix[desNode][srcNode] = 0;
+                    bugMatrix[srcNode-1][desNode-1] = 0;
+                    bugMatrix[desNode-1][srcNode-1] = 0;
                 }
             }
         }

@@ -7,7 +7,7 @@ public class smtOrder {
     public smtOrder() {
 
     }
-
+    public String cost;
     public String[] getFinalOrder(String filePath, int size) throws IOException, InterruptedException {
 
         String[] finalOrder = new String[size];
@@ -37,9 +37,16 @@ public class smtOrder {
                 finalOrder[Integer.parseInt(result[1])-1] = BUG;
             }
 
-            if (bugPair == 9) {
+            if (bugPair == size) {
                 break;
             }
+        }
+        while ((line = br.readLine()) != null) {
+            if (line.indexOf("cost") != -1) {
+                cost = line.substring(6, line.length());
+
+            }
+
         }
 
         br.close();
