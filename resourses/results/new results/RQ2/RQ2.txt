@@ -1,0 +1,19 @@
+ESCAPE#
+======
+dt1 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError0eli0/disagreementWithGoldStandard.txt")
+dt2 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError0eli20/disagreementWithGoldStandard.txt")
+dt3 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError0eli50/disagreementWithGoldStandard.txt")
+
+boxplot(dt1, dt2, dt3, names=c("Non-interactive SMT", "Interactive SMT with 20eli", "Interactive SMT with 50eli"), col="blue", cex.lab=1.6, cex.axis=1.8)
+par(new=TRUE)
+boxplot(dt1, dt2, dt3, names=c("Non-interactive SMT", "Interactive SMT with 20eli", "Interactive SMT with 50eli"), ylab="Disagreement With Gold Standard", col="blue", range=0, cex.lab=1.6, cex.axis=1.8)
+title("Box-Plot of Disagreement for Non-interactive SMT and Interactive SMT prioritization to the GS", font.main= 1, cex.main=1.2)
+
+dt1 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError0eli0/distance.txt")
+dt2 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError0eli20/distance.txt")
+dt3 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError0eli50/distance.txt")
+
+boxplot(dt1, dt2, dt3, names=c("Non-interactive SMT", "Interactive SMT with 20eli", "Interactive SMT with 50eli"), col="blue", cex.lab=1.6, cex.axis=1.8)
+par(new=TRUE)
+boxplot(dt1, dt2, dt3, names=c("Non-interactive SMT", "Interactive SMT with 20eli", "Interactive SMT with 50eli"), ylab="Average Distance", col="blue", range=0, cex.lab=1.6, cex.axis=1.8)
+title("Box-Plot of Average Distance for Non-interactive SMT and Interactive SMT prioritization to the GS", font.main= 1, cex.main=1.2)

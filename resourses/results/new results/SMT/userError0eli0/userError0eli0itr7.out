@@ -1,0 +1,18 @@
+population: 15
+
+User Error: 0 %
+
+Max Number Of Elicited Pairs: 0
+
+The minimum average distance: 7.099999904632568
+
+The minimum disagreement: 92.0
+
+The final order(s): 
+[BUG13, BUG15, BUG18, BUG19, BUG16, BUG1, BUG2, BUG10, BUG3, BUG20, BUG4, BUG14, BUG8, BUG5, BUG6, BUG9, BUG11, BUG7, BUG12, BUG17]
+
+Elicited pairs: 
+
+
+The gold standard: 
+[BUG4, BUG3, BUG1, BUG12, BUG18, BUG6, BUG5, BUG14, BUG9, BUG15, BUG13, BUG17, BUG19, BUG20, BUG16, BUG11, BUG10, BUG8, BUG7, BUG2]

@@ -10,6 +10,8 @@ public class getBugSize {
         XSSFWorkbook workbook = new XSSFWorkbook(fs);
         XSSFSheet sheet = workbook.getSheetAt(0);
         int bugSize = sheet.getLastRowNum();
+        workbook.close();
+        fs.close();
         return bugSize;
     }
 }

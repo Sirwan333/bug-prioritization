@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class generateYicesFileWithNewAsserts {
-    public void writeYicesFileWithAsserts(int[][] ageMatrix, int[][] importanceMatrix, int[][] componentImpactGraph, int[][] relatedBugsGraph, String inputPath, String outputPath, int size) throws IOException {
+    public void writeYicesFileWithAsserts(String inputPath, String outputPath, int size) throws IOException {
         FileInputStream fs = new FileInputStream(outputPath);
         DataInputStream ds = new DataInputStream(fs);
         BufferedReader bf = new BufferedReader(new InputStreamReader(ds));
@@ -70,8 +70,12 @@ public class generateYicesFileWithNewAsserts {
         }
         pw.write("\n");
         pw.write("(max-sat)");
-        pw.close();
         bf11.close();
+        myWriter.flush();
+        myWriter.close();
+        pw.flush();
+        pw.close();
+
 
         if (!myInputFile.delete())
             System.out.println("Could not delete file");
@@ -79,53 +83,6 @@ public class generateYicesFileWithNewAsserts {
         //Rename the new file to the filename the original file had.
         if (!tempFile.renameTo(myInputFile))
             System.out.println("Could not rename file");
-
-
-        /*myWriter.write("(set-evidence! true)");
-        myWriter.write("\n");
-        myWriter.write("(define BUG::(-> nat nat))");
-        myWriter.write("\n");
-        myWriter.write("(define N::nat "+Integer.toString(size)+")");
-        myWriter.write("\n");
-        myWriter.write("(assert (forall (i::(subrange 1 N)) (and (>= (BUG i) 1) (<= (BUG i) N))))");
-        myWriter.write("\n");
-        myWriter.write("(assert (forall (i::(subrange 1 (- N 1))) (forall (j::(subrange (+ i 1) N)) (/= (BUG i) (BUG j)))))");
-        myWriter.write("\n");
-        for(int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++){
-                if(importanceMatrix[i][j] == 1){
-                    myWriter.write("(assert+ (< (BUG " + Integer.toString(i+1) + ") (BUG " + Integer.toString(j+1) + ")) " + Integer.toString(prioWeight) + ")");
-                    myWriter.write("\n");
-                }
-            }
-        }
-        myWriter.write("\n");
-        for(int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++){
-                if(ageMatrix[i][j] == 1){
-                    myWriter.write("(assert+ (< (BUG " + Integer.toString(i+1) + ") (BUG " + Integer.toString(j+1) + ")) " + Integer.toString(prioWeight) + ")");
-                    myWriter.write("\n");
-                }
-            }
-        }
-        myWriter.write("\n");
-        for(int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++){
-                if(componentImpactGraph[i][j] == 1){
-                    myWriter.write("(assert+ (< (BUG " + Integer.toString(i+1) + ") (BUG " + Integer.toString(j+1) + ")) " + Integer.toString(prioWeight) + ")");
-                    myWriter.write("\n");
-                }
-            }
-        }
-        myWriter.write("\n");
-        for(int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++){
-                if(relatedBugsGraph[i][j] == 1){
-                    myWriter.write("(assert+ (< (BUG " + Integer.toString(i+1) + ") (BUG " + Integer.toString(j+1) + ")) " + Integer.toString(prioWeight) + ")");
-                    myWriter.write("\n");
-                }
-            }
-        }*/
 
 
     }

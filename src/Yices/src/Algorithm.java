@@ -25,9 +25,11 @@ public class Algorithm {
             System.out.println(line);
         int exitValue = process.waitFor();
         //System.out.println(exitValue);
-        stderr.close();
-        isr.close();
         br.close();
+        isr.close();
+        stderr.close();
+
+
 
     }
 }

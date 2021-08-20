@@ -1,0 +1,9 @@
+The minimum average distance: 7.4
+
+The minimum disagreement: 107.0
+
+The final order(s): 
+[BUG13, BUG19, BUG20, BUG7, BUG3, BUG14, BUG17, BUG12, BUG2, BUG15, BUG18, BUG16, BUG11, BUG10, BUG5, BUG6, BUG9, BUG1, BUG8, BUG4]
+
+The gold standard: 
+[BUG4, BUG3, BUG1, BUG12, BUG18, BUG6, BUG5, BUG14, BUG9, BUG15, BUG13, BUG17, BUG19, BUG20, BUG16, BUG11, BUG10, BUG8, BUG7, BUG2]

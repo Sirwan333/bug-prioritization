@@ -1,0 +1,45 @@
+ESCAPE#
+======
+dt1 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError0eli50/disagreementWithGoldStandard.txt")
+dt2 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError5eli50/disagreementWithGoldStandard.txt")
+dt3 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError10eli50/disagreementWithGoldStandard.txt")
+dt4 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError20eli50/disagreementWithGoldStandard.txt")
+dt5 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/randomBased/disagreementWithGoldStandard.txt")
+
+boxplot(dt1, dt2, dt3, dt4, dt5, names=c("SMT50Err0", "SMT50Err5", "SMT50Err10", "SMT50Err20", "RandomBased"), col="blue", cex.lab=1.6, cex.axis=1.8)
+par(new=TRUE)
+boxplot(dt1, dt2, dt3, dt4, dt5, names=c("SMT50Err0", "SMT50Err5", "SMT50Err10", "SMT50Err20", "RandomBased"), ylab="Disagreement With Gold Standard", col="blue", range=0, cex.lab=1.6, cex.axis=1.8)
+title("Box-Plot of Disagreement for SMT with 50 eli pairs and different user errors and Random based prioritization to the GS", font.main= 1, cex.main=1.2)
+
+dt1 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError0eli50/distance.txt")
+dt2 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError5eli50/distance.txt")
+dt3 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError10eli50/distance.txt")
+dt4 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError20eli50/distance.txt")
+dt5 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/randomBased/distance.txt")
+
+boxplot(dt1, dt2, dt3, dt4, dt5, names=c("SMT50Err0", "SMT50Err5", "SMT50Err10", "SMT50Err20", "RandomBased), col="blue", cex.lab=1.6, cex.axis=1.8)
+par(new=TRUE)
+boxplot(dt1, dt2, dt3, dt4, dt5, names=c("SMT50Err0", "SMT50Err5", "SMT50Err10", "SMT50Err20", "RandomBased"), ylab="Average Distance", col="blue", range=0, cex.lab=1.6, cex.axis=1.8)
+title("Box-Plot of Average Distance for SMT with 50 eli pairs and different user errors and Random based prioritization", font.main= 1, cex.main=1.2)
+
+dt1 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError0eli50/disagreementWithGoldStandard.txt")
+dt2 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError5eli50/disagreementWithGoldStandard.txt")
+dt3 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError10eli50/disagreementWithGoldStandard.txt")
+dt4 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError20eli50/disagreementWithGoldStandard.txt")
+dt5 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError0eli0/disagreementWithGoldStandard.txt")
+
+boxplot(dt1, dt2, dt3, dt4, dt5, names=c("SMT50Err0", "SMT50Err5", "SMT50Err10", "SMT50Err20", "Non-interactive SMT"), col="blue", cex.lab=1.6, cex.axis=1.8)
+par(new=TRUE)
+boxplot(dt1, dt2, dt3, dt4, dt5, names=c("SMT50Err0", "SMT50Err5", "SMT50Err10", "SMT50Err20", "Non-interactive SMT"), ylab="Disagreement With Gold Standard", col="blue", range=0, cex.lab=1.6, cex.axis=1.8)
+title("Box-Plot of Disagreement for SMT with 50 eli pairs and different user errors and Non-interactive SMT prioritization", font.main= 1, cex.main=1.2)
+
+dt1 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError0eli50/distance.txt")
+dt2 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError5eli50/distance.txt")
+dt3 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError10eli50/distance.txt")
+dt4 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError20eli50/distance.txt")
+dt5 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError0eli0/distance.txt")
+
+boxplot(dt1, dt2, dt3, dt4, dt5, names=c("SMT50Err0", "SMT50Err5", "SMT50Err10", "SMT50Err20", "Non-interactive SMT"), col="blue", cex.lab=1.6, cex.axis=1.8)
+par(new=TRUE)
+boxplot(dt1, dt2, dt3, dt4, dt5, names=c("SMT50Err0", "SMT50Err5", "SMT50Err10", "SMT50Err20", "Non-interactive SMT"), ylab="Average Distance", col="blue", range=0, cex.lab=1.6, cex.axis=1.8)
+title("Box-Plot of Average Distance for SMT with 50 eli pairs and different user errors and Non-interactive SMT prioritization", font.main= 1, cex.main=1.2)

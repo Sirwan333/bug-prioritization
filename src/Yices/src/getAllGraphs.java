@@ -62,10 +62,10 @@ public class getAllGraphs {
         }
         System.out.println();
         for (int i = 0; i < bugSize; i++) {
-            System.out.print("Bug " + i + " has more related bugs than Bug: ");
+            System.out.print("Bug " + (i+1) + " has more related bugs than Bug: ");
             for (int j = 0; j < bugSize; j++) {
                 if (relatedBugsGraph[i][j] == 1) {
-                    System.out.print(j + " ");
+                    System.out.print((j+1) + " ");
                 }
             }
             System.out.println();
@@ -83,10 +83,10 @@ public class getAllGraphs {
         }
         System.out.println();
         for (int i = 0; i < bugSize; i++) {
-            System.out.print("Bug " + i + " is more important than Bug: ");
+            System.out.print("Bug " + (i+1) + " is more important than Bug: ");
             for (int j = 0; j < bugSize; j++) {
                 if (importanceMatrix[i][j] == 1) {
-                    System.out.print(j + " ");
+                    System.out.print((j+1) + " ");
                 }
             }
             System.out.println();
@@ -104,10 +104,10 @@ public class getAllGraphs {
         }
         System.out.println();
         for (int i = 0; i < bugSize; i++) {
-            System.out.print("Bug " + i + " has more impact than Bug: ");
+            System.out.print("Bug " + (i+1) + " has more impact than Bug: ");
             for (int j = 0; j < bugSize; j++) {
                 if (componentImpactGraph[i][j] == 1) {
-                    System.out.print(j + " ");
+                    System.out.print((j+1) + " ");
                 }
             }
             System.out.println();
@@ -125,10 +125,31 @@ public class getAllGraphs {
         }
         System.out.println();
         for (int i = 0; i < bugSize; i++) {
-            System.out.print("Bug " + i + " is more important than Bug: ");
+            System.out.print("Bug " + (i+1) + " is more important than Bug: ");
             for (int j = 0; j < bugSize; j++) {
                 if (ageMatrix[i][j] == 1) {
-                    System.out.print(j + " ");
+                    System.out.print((j+1) + " ");
+                }
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    public void printCCListGraph(int[][] ccList, int bugSize) {
+        System.out.println("--------------CCList Graph----------------");
+        for (int i = 0; i < bugSize; i++) {
+            for (int j = 0; j < bugSize; j++) {
+                System.out.printf("%8d", ccList[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println();
+        for (int i = 0; i < bugSize; i++) {
+            System.out.print("Bug " + (i+1) + " is more important than Bug: ");
+            for (int j = 0; j < bugSize; j++) {
+                if (ccList[i][j] == 1) {
+                    System.out.print((j+1) + " ");
                 }
             }
             System.out.println();

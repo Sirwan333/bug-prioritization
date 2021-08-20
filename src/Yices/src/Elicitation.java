@@ -27,7 +27,6 @@ public class Elicitation {
                 }
             }
         }
-
         return action;
     }
 
@@ -62,6 +61,40 @@ public class Elicitation {
                 counter++;
             }
         }
+        return newArray;
+    }
+
+    public String[] askUserAutmated(String[] preEli, int error, String[] goldStandard) {
+        String[] newArray = new String[preEli.length*2];
+       // long errorPercentage = Math.round((error*preEli.length)*0.01);
+
+            boolean flag = false;
+            int counter = 0;
+            for (int i = 0; i<preEli.length; i++){
+                for (int j = 0; j<goldStandard.length; j++){
+                    if (preEli[0].equals(goldStandard[j])){
+                        for (int k = j+1; k<goldStandard.length; k++){
+                            if (preEli[1].equals(goldStandard[k])){
+                                newArray[counter] = preEli[0];
+                                counter++;
+                                newArray[counter] = preEli[1];
+                                counter++;
+                                flag = true;
+                            }
+                        }
+                        if (!flag){
+                            newArray[counter] = preEli[1];
+                            counter++;
+                            newArray[counter] = preEli[0];
+                            counter++;
+                        }
+                        flag = false;
+                    }
+
+                }
+            }
+
+
         return newArray;
     }
 }

@@ -1,0 +1,8 @@
+inputPath = C:\\Users\\serwa\\Desktop\\ThesisProject\\resourses\\input.ys
+outputPath = C:\\Users\\serwa\\Desktop\\ThesisProject\\resourses\\output.txt
+xlsxFile = C:\\Users\\serwa\\Desktop\\ThesisProject\\resourses\\dataset\\bug_new.xlsx
+population = 15
+userError = 0
+maxNumberOfElicitedPairs = 0
+isInteractive = true
+resultPath = C:\\Users\\serwa\\Desktop\\ThesisProject\\resourses\\results\\userError0eli0itr1.out

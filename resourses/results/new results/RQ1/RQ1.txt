@@ -1,0 +1,18 @@
+ESCAPE#
+======
+
+dt1 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError0eli20/disagreementWithGoldStandard.txt")
+dt2 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/randomBased/disagreementWithGoldStandard.txt")
+
+boxplot(dt1, dt2, names=c("SMT", "Random"), col="blue", cex.lab=1.6, cex.axis=1.8)
+par(new=TRUE)
+boxplot(dt1, dt2, names=c("SMT", "Random"), ylab="Disagreement With Gold Standard", col="blue", range=0, cex.lab=1.6, cex.axis=1.8)
+title("Box-Plot of Disagreement for SMT and Random-based prioritization to the GS for zero user error and 20 Elicited pairs and 20 Bugs", font.main= 1, cex.main=1.2)
+
+dt1 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/SMT/userError0eli50/disagreementWithGoldStandard.txt")
+dt2 <- scan("C:/Users/serwa/Desktop/ThesisProject/resourses/results/new results/randomBased/disagreementWithGoldStandard.txt")
+
+boxplot(dt1, dt2, names=c("SMT", "Random"), col="blue", cex.lab=1.6, cex.axis=1.8)
+par(new=TRUE)
+boxplot(dt1, dt2, names=c("SMT", "Random"), ylab="Disagreement With Gold Standard", col="blue", range=0, cex.lab=1.6, cex.axis=1.8)
+title("Box-Plot of Disagreement for SMT and Random-based prioritization to the GS for zero user error and 50 Elicited pairs and 20 Bugs", font.main= 1, cex.main=1.2)
